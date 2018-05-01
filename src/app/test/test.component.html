@@ -1,0 +1,28 @@
+<h3>Two Way Data Binding Starts from Here</h3>
+
+Enter your Name : <input type="text" [(ngModel)]="name"><br>
+
+
+Enter your Name : <input type="text" [(ngModel)]="name"><br>
+{{name}}<hr>
+
+<br><br><br>
+Enter First No <input type="number" [(ngModel)]="firstNo"><br>
+Enter Second No <input type="number" [(ngModel)]="secondNo"><br>
+{{'Sum of two no is '+(firstNo+secondNo)}}<hr>
+
+<br><br><br>
+
+<input type="radio" name="gender" [(ngModel)]="gender" value="Mr.">Male
+<input type="radio" name="gender" [(ngModel)]="gender" value="Miss.">Female
+{{'You Are '+gender}}
+
+<br><br><br>
+
+Enter Your Name: <input type="text" [value]="username" (input)="username=$event.target.value"><br>
+
+
+<br><br><br>
+
+Enter Your Name: <input type="text" [value]="username" (input)="username=$event.target.value"><br>
+{{username}}<hr>

@@ -1,0 +1,40 @@
+<h1 style="text-align:center;">
+  Event Binding Concept
+</h1>
+<p>Example 1</p>
+<button (click)='message1="Hello"'>Click me</button>
+<button (click)='message1=""'>Reset</button>
+<hr>
+{{message1}}
+
+<br><br><br>
+<p>Example 2</p>
+Enter your name: <input type="text" [(ngModel)]="userfullname">
+<button (click)="getMessage()">Get message</button>
+<hr>
+{{message2}}
+
+<br><br><br>
+<p>Example 3</p>
+Enter 1st no <input type="number" [(ngModel)]="firstNo"><br>
+Enter 2nd no <input type="number" [(ngModel)]="secondNo">
+<button (click)="calculate('sum')">Get message</button>
+<button (click)="calculate('bigger')">Get message</button>
+<hr>
+{{message3}}
+
+<h1 style="text-align:center;">
+  Style Binding Concept
+</h1>
+<p>Example 1</p>
+<h1 [ngStyle]="headingStyle">Here I am changing style of my h1 tag</h1>
+<p [ngStyle]="peragraphStyle">Here I am changing style of my p tag</p>
+
+<br><br><br>
+<p>Example 2</p>
+Enter your Name: <input type="text" [(ngModel)]="userName"><br>
+Select your gender: <input type="radio" name ="gender" value ="male" [(ngModel)]="gender"> Male
+<input type="radio" name ="gender" value ="female" [(ngModel)]="gender"> Female
+<br>
+<button (click)="getGenderMessage()">Submit</button>
+<p [ngStyle]="genderStyle">{{genderMessage}}</p>
