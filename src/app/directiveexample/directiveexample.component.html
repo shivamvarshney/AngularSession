@@ -1,0 +1,38 @@
+<h3 style="text-align:center;">
+  Directives Demo
+</h3>
+<h4 style="text-align:center;">
+  Structural Directives are *ngIf,*ngFor,*ngSwitch, these are recognized by *.
+</h4>
+<hr>
+<h5>This is *ngIf example</h5><hr>
+
+<button (click)="updatecondition()">ChangeStatus</button><br>
+<br>
+<div *ngIf = "conditionCheck">
+  <p>If this condition is {{conditionCheck}}, then we can see this DIV in the DOM</p>
+</div>
+
+<div *ngIf = "!(conditionCheck)">
+  <p>If this condition is {{conditionCheck}}, then we can see this DIV in the DOM</p>
+</div>
+
+<br>
+<hr>
+<h5>This is *ngFor example</h5><hr>
+
+<ul *ngFor="let preferedLn of favoriteLanguages; let i=index;">
+   <li>{{i+1}}    {{preferedLn.name}}  - {{preferedLn.type}}</li>
+</ul>
+<br>
+<hr>
+<h5>This is *ngSwitch example</h5><hr>
+
+<ul *ngFor="let preferedLn of favoriteLanguages;" [ngSwitch]="preferedLn.name">
+   <li *ngSwitchCase="'HTML'" class="text-success"><p>{{preferedLn.name}}  - {{preferedLn.type}}</p></li>
+   <li *ngSwitchCase="'Node JS'" class="text-primary">{{preferedLn.name}}  - {{preferedLn.type}}</li>
+   <li *ngSwitchCase="'JavaScript'" class="text-danger">{{preferedLn.name}}  - {{preferedLn.type}}</li>
+   <li *ngSwitchCase="'Php'" class="text-secondary">{{preferedLn.name}}  - {{preferedLn.type}}</li>
+   <li *ngSwitchCase="'CSS'" class="text-warning">{{preferedLn.name}}  - {{preferedLn.type}}</li>
+   <li *ngSwitchDefault class="text-info">{{preferedLn.name}}  - {{preferedLn.type}}</li>
+</ul>

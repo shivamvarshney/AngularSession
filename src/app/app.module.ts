@@ -5,8 +5,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { HeaderComponent } from './header/header.component';
-import { RajaniComponent } from './rajani/rajani.component';
-import { FormsModule } from '@angular/forms' ;
+import { FormsModule } from '@angular/forms';
+import { DirectiveexampleComponent } from './directiveexample/directiveexample.component';
+import { PipeexampleComponent } from './pipeexample/pipeexample.component';
+import { CustompipeexamplePipe } from './custompipeexample.pipe';
+import { SearchByPipe } from './search-by.pipe' ;
 
 
 @NgModule({
@@ -14,7 +17,11 @@ import { FormsModule } from '@angular/forms' ;
     AppComponent,
     TestComponent,
     HeaderComponent,
-    RajaniComponent
+    DirectiveexampleComponent,
+    PipeexampleComponent,
+    CustompipeexamplePipe,
+    SearchByPipe
+    
   ],
   imports: [
     BrowserModule,

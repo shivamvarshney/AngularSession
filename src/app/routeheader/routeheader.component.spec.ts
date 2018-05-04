@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RajaniComponent } from './rajani.component';
+import { RouteheaderComponent } from './routeheader.component';
 
-describe('RajaniComponent', () => {
-  let component: RajaniComponent;
-  let fixture: ComponentFixture<RajaniComponent>;
+describe('RouteheaderComponent', () => {
+  let component: RouteheaderComponent;
+  let fixture: ComponentFixture<RouteheaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RajaniComponent ]
+      declarations: [ RouteheaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RajaniComponent);
+    fixture = TestBed.createComponent(RouteheaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
