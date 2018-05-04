@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router, Params, ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Classic';
   username:string;
+  constructor(private _router:Router){
+
+  }
   getUpdatedDate(){
     var dateObj = new Date();
     var datemessage = dateObj.getDate()+' / '+dateObj.getFullYear()+' / '+(dateObj.getMonth() + 1);
