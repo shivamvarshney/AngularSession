@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { DirectiveexampleComponent } from './directiveexample/directiveexample.component';
 import { PipeexampleComponent } from './pipeexample/pipeexample.component';
 import { CustompipeexamplePipe } from './custompipeexample.pipe';
@@ -18,7 +18,12 @@ import { SearchComponent } from './search/search.component';
 import { RouteheaderComponent } from './routeheader/routeheader.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component' ;
+import { ChildComponent } from './child/child.component';
+import { ChildnewComponent } from './childnew/childnew.component';
+import { ParentnewComponent } from './parentnew/parentnew.component' ;  
+import { ServiceexampleService } from './serviceexample.service';
+import { HttpModule } from '@angular/http';
+import { ForsexampleComponent } from './forsexample/forsexample.component';
 const approutes:Routes = [
   {
     path:'',
@@ -41,8 +46,7 @@ const approutes:Routes = [
     component:RoutingexampleComponent 
   },
   {
-    path:'artist/:name',
-    //path:'artist/:name:id',
+    path:'artist',
     component:ArtistComponent 
   },
   {
@@ -74,6 +78,14 @@ const approutes:Routes = [
     component:ParentComponent 
   },
   {
+    path:'childNew',
+    component:ParentnewComponent 
+  },
+  {
+    path:"forms",
+    component:ForsexampleComponent
+  },
+  {
     path:'**',
     component:PagenotfoundComponent
   }
@@ -96,14 +108,19 @@ const approutes:Routes = [
     RouteheaderComponent,
     PagenotfoundComponent,
     ParentComponent,
-    ChildComponent    
+    ChildComponent,
+    ChildnewComponent,
+    ParentnewComponent,
+    ForsexampleComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(approutes)
+    RouterModule.forRoot(approutes),
+    HttpModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ServiceexampleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

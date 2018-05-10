@@ -1,3 +1,16 @@
-<p>
-    Hello Artist {{artistName}}
-</p>
+<div>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let artistsInfo of artistsList">
+                <td>{{artistsInfo.id}}</td>
+                <td>{{artistsInfo.name}}</td>
+                <td>{{artistsInfo.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
