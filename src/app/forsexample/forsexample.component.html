@@ -1,0 +1,51 @@
+<h1>Template Driven Approach</h1>
+<p>Normal Form Example 1</p>
+<form (ngSubmit)="submitForm1()">
+  Name : <input type="text" name="user_name" ngModel/><br>
+  <button type="submit">Submit</button>
+</form><hr>
+{{message1}}
+
+<p>Angular Form Example 2</p>
+<form #angularFormExample=ngForm (ngSubmit)="submitForm2(angularFormExample.value)">
+    Enter your Name : <input type="text" name="username" ngModel /><br>
+    Enter your Email : <input type="email" name="useremail" ngModel/><br>
+    Enter your Phone No : <input type="number" name="userphone" ngModel/><br>
+    Select Your Gender : <input type="radio" name="gender" value="m" ngModel>Male<input type="radio" name="gender" value="f" ngModel>Female<br>
+    Terms And Conditions : <input type="checkbox" name="terms" ngModel><br>
+    <button type="submit">Register</button>
+</form> <hr>
+{{message2 | json}}
+<hr>
+{{message3}}
+
+
+<br>
+<h2>Reactive Registration Form</h2>
+<h3>{{rRegForm.valid}}</h3>
+<p>
+  {{rRegForm.value | json}}
+</p>
+<form [formGroup]="rRegForm" (ngSubmit)="rRegForm.valid && register()">
+  <div class="form-group" [ngClass]="{ 'has-error': rRegForm.controls['firstName'].touched && rRegForm.controls['firstName'].invalid }">
+    <label for="firstName" class="control-label">First Name</label>
+    <input type="text" class="form-control" id="firstName" formControlName="firstName">
+    <span *ngIf="rRegForm.controls['firstName'].touched && rRegForm.controls['firstName'].invalid && rRegForm.controls['firstName'].errors.required" class="help-block">First Name is Required</span>       
+    <span *ngIf="rRegForm.controls['firstName'].touched && rRegForm.controls['firstName'].invalid && rRegForm.controls['firstName'].errors.minLength" class="help-block">First Name is Required</span>           
+  </div>
+
+  <div class="form-group">
+    <label for="lastName" class="control-label">Last Name</label>
+    <input type="text" class="form-control" id="lastName" formControlName="lastName">
+  </div>
+
+  <div class="form-group">
+    <label for="email" class="control-label">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-primary">Register</button>
+    <button type="button" class="btn btn-success" (click)="reset()">Reset</button>
+  </div>
+</form>
